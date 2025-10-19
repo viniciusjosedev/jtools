@@ -1,4 +1,4 @@
-package dev.vinion.vstream_java.vstream_java;
+package dev.vinion.vstream;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,5 +9,4 @@ public class VstreamJavaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(VstreamJavaApplication.class, args);
 	}
-
 }

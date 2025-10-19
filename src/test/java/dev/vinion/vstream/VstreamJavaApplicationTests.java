@@ -1,4 +1,4 @@
-package dev.vinion.vstream_java.vstream_java;
+package dev.vinion.vstream;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
