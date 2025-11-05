@@ -16,12 +16,12 @@ import java.util.UUID;
 @Table(name = "users")
 public class UserEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
     @Column(name = "email", unique = true)
     String email;
 
-    @Column(name = "password", unique = true)
+    @Column(name = "password")
     String password;
 }

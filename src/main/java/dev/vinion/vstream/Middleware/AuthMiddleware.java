@@ -6,15 +6,15 @@ import dev.vinion.vstream.Services.Jwt.JwtService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.HandlerInterceptor;
-
-import java.io.IOException;
 import java.util.Map;
 
 @Component
 public class AuthMiddleware implements HandlerInterceptor {
-    JwtService jwtService;
+    private final JwtService jwtService;
 
     @Autowired
     public AuthMiddleware(JwtService jwtService) {
@@ -30,15 +30,7 @@ public class AuthMiddleware implements HandlerInterceptor {
 
             return true;
         } catch (JWTVerificationException err) {
-            try {
-                response.setContentType("application/json");
-                response.getWriter().write("nao deu seu pika");
-                response.getWriter().flush();
-            } catch (IOException IoErr) {
-                System.out.printf("Err in send json to user in auth: %s\n", IoErr.getMessage());
-            }
-
-            return false;
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Unauthorized");
         }
     }
 }

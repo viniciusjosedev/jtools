@@ -7,10 +7,9 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import org.springframework.stereotype.Component;
-
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Map;
-import java.util.Set;
 
 @Component
 public class JwtService {
@@ -22,7 +21,7 @@ public class JwtService {
 
     public String sign(Map<String, Object> data) {
         JWTCreator.Builder sign = JWT.create();
-        sign.withExpiresAt(new Date(2025, 12, 12));
+        sign.withExpiresAt(LocalDateTime.now().plusYears(1).atZone(ZoneId.systemDefault()).toInstant());
 
         data.keySet().forEach((key) -> {
             sign.withClaim(key, (String) data.get(key));

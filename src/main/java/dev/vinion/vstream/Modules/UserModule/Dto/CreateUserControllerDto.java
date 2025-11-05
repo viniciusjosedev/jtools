@@ -9,8 +9,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateUserControllerDto {
-    @NotBlank(message = "email faltando porra")
+    @NotBlank()
     @Email()
     private String email;
+
+    @NotBlank()
     private String password;
 }
