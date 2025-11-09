@@ -62,7 +62,7 @@ public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
             data.put(error.getField(), error.getDefaultMessage());
         });
 
-        body.put("statusCode", HttpStatus.BAD_REQUEST);
+        body.put("statusCode", 400);
         body.put("success", false);
         body.put("data", data);
 
@@ -86,7 +86,7 @@ public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
     public ResponseEntity<Map<String, Object>> handleGeneralException(Exception ex) {
         Map<String, Object> body = new HashMap<>();
 
-        body.put("statusCode", HttpStatus.INTERNAL_SERVER_ERROR);
+        body.put("statusCode", 500);
         body.put("success", false);
 
         return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
