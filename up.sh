@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker network create jtools-networking
+docker compose up -d --build

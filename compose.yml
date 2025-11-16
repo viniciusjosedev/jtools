@@ -1,0 +1,40 @@
+networks:
+  jtools-networking:
+    driver: bridge
+    external: true
+
+services:
+  jtools-db:
+    image: postgres:18
+    container_name: jtools-db
+    ports:
+      - ${DATABASE_PORT}:5432
+    networks:
+      - jtools-networking
+    environment:
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    volumes:
+      - jtools_data:/var/lib/postgresql
+
+  jtools-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ${JAVA_ENV}
+    container_name: jtools-api
+    networks:
+      - jtools-networking
+    environment:
+        - MAVEN_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:${PORT_DEBUG}
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    depends_on:
+      - jtools-db
+    ports:
+      - "${PORT}:${PORT}"
+      - "${PORT_DEBUG}:${PORT_DEBUG}"
+
+volumes:
+  jtools_data:
