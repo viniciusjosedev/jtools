@@ -1,4 +1,4 @@
-package dev.vinion.vstream.Modules.UserModule.Dto;
+package dev.vinion.jtools.modules.userModule.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

@@ -1,6 +1,6 @@
-package dev.vinion.vstream.Configurations;
+package dev.vinion.jtools.configurations;
 
-import dev.vinion.vstream.Middleware.AuthMiddleware;
+import dev.vinion.jtools.middleware.AuthMiddleware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

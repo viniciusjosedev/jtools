@@ -1,12 +1,12 @@
-package dev.vinion.vstream;
+package dev.vinion.jtools;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class VstreamJavaApplication {
+public class JtoolsJavaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VstreamJavaApplication.class, args);
+		SpringApplication.run(JtoolsJavaApplication.class, args);
 	}
 }

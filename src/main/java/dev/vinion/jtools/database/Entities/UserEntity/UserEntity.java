@@ -1,9 +1,7 @@
-package dev.vinion.vstream.Database.Entities.UserEntity;
+package dev.vinion.jtools.database.Entities.UserEntity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.UUID;
 
 @Getter
 @Setter

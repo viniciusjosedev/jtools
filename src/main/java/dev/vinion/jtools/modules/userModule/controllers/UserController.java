@@ -1,8 +1,8 @@
-package dev.vinion.vstream.Modules.UserModule.Controllers;
+package dev.vinion.jtools.modules.userModule.controllers;
 
-import dev.vinion.vstream.Modules.UserModule.Dto.CreateUserControllerDto;
-import dev.vinion.vstream.Modules.UserModule.Dto.CreateUserUseCaseDto;
-import dev.vinion.vstream.Modules.UserModule.UseCases.CreateUserUseCase;
+import dev.vinion.jtools.modules.userModule.dto.CreateUserControllerDto;
+import dev.vinion.jtools.modules.userModule.dto.CreateUserUseCaseDto;
+import dev.vinion.jtools.modules.userModule.usecases.CreateUserUseCase;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 

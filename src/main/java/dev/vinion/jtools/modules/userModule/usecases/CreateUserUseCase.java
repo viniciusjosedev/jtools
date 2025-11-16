@@ -1,9 +1,8 @@
-package dev.vinion.vstream.Modules.UserModule.UseCases;
+package dev.vinion.jtools.modules.userModule.usecases;
 
-import dev.vinion.vstream.Database.Entities.UserEntity.UserEntity;
-import dev.vinion.vstream.Database.Repositories.UserRepository.UserRepository;
-import dev.vinion.vstream.Modules.UserModule.Dto.CreateUserUseCaseDto;
-import lombok.NoArgsConstructor;
+import dev.vinion.jtools.database.Entities.UserEntity.UserEntity;
+import dev.vinion.jtools.database.Repositories.UserRepository.UserRepository;
+import dev.vinion.jtools.modules.userModule.dto.CreateUserUseCaseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
