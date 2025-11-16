@@ -3,6 +3,7 @@ package dev.vinion.jtools.modules.userModule.usecases;
 import dev.vinion.jtools.database.Entities.UserEntity.UserEntity;
 import dev.vinion.jtools.database.Repositories.UserRepository.UserRepository;
 import dev.vinion.jtools.modules.userModule.dto.CreateUserUseCaseDto;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
@@ -10,12 +11,9 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Optional;
 
 @Component
+@RequiredArgsConstructor
 public class CreateUserUseCase {
     private final UserRepository userRepository;
-
-    public CreateUserUseCase(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     public void execute(CreateUserUseCaseDto data) {
         Optional<UserEntity> findUser = this.userRepository.findByEmail(data.getEmail());
