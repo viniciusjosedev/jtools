@@ -8,6 +8,7 @@ class VstreamJavaApplicationTests {
 
 	@Test
 	void contextLoads() {
+        System.out.println("test test");
 	}
 
 }
