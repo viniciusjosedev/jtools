@@ -1,6 +1,6 @@
-package dev.vinion.jtools.database.Repositories.UserRepository;
+package dev.vinion.jtools.database.repositories.UserRepository;
 
-import dev.vinion.jtools.database.Entities.UserEntity.UserEntity;
+import dev.vinion.jtools.database.entities.UserEntity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package dev.vinion.jtools.database.Entities.UserEntity;
+package dev.vinion.jtools.database.entities.UserEntity;
 
 import jakarta.persistence.*;
 import lombok.*;

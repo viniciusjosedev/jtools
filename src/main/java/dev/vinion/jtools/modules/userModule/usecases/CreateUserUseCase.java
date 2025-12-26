@@ -1,7 +1,7 @@
 package dev.vinion.jtools.modules.userModule.usecases;
 
-import dev.vinion.jtools.database.Entities.UserEntity.UserEntity;
-import dev.vinion.jtools.database.Repositories.UserRepository.UserRepository;
+import dev.vinion.jtools.database.entities.UserEntity.UserEntity;
+import dev.vinion.jtools.database.repositories.UserRepository.UserRepository;
 import dev.vinion.jtools.modules.userModule.dto.CreateUserUseCaseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
