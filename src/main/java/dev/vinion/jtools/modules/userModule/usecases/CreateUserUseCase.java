@@ -18,7 +18,7 @@ public class CreateUserUseCase {
     public void execute(CreateUserUseCaseDto data) {
         Optional<UserEntity> findUser = this.userRepository.findByEmail(data.getEmail());
 
-        if (findUser.isPresent()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User already exist");
+        if (findUser.isPresent()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User already exists");
 
         UserEntity user = UserEntity.builder().email(data.getEmail()).password(data.getPassword()).build();
 

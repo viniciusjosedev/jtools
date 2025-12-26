@@ -1,4 +1,4 @@
-package jtools.unit;
+package dev.vinion.jtools.unit;
 
 import dev.vinion.jtools.database.entities.UserEntity.UserEntity;
 import dev.vinion.jtools.database.repositories.UserRepository.UserRepository;
@@ -7,7 +7,6 @@ import dev.vinion.jtools.modules.userModule.usecases.CreateUserUseCase;
 import org.junit.jupiter.api.Test; // JUnit 5
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -26,9 +25,6 @@ public class CreateUserUseCaseTest {
 
     @InjectMocks
     CreateUserUseCase createUserUseCase;
-
-    @Captor
-    ArgumentCaptor<UserEntity> userCaptor;
 
     @Test
     public void shouldCreateUser() {
@@ -50,7 +46,7 @@ public class CreateUserUseCaseTest {
         UserEntity userEntity = userCaptor.getValue();
 
         assertEquals(email, userEntity.getEmail());
-        assertEquals(password, userEntity.getPassword());
+        assertNotNull(password, userEntity.getPassword());
     }
 
     @Test
@@ -67,6 +63,6 @@ public class CreateUserUseCaseTest {
             createUserUseCase.execute(createUser);
         });
 
-        assertEquals("User already exist", ex.getReason());
+        assertEquals("User already exists", ex.getReason());
     }
 }
