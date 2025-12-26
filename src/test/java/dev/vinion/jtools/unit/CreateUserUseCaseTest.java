@@ -46,7 +46,7 @@ public class CreateUserUseCaseTest {
         UserEntity userEntity = userCaptor.getValue();
 
         assertEquals(email, userEntity.getEmail());
-        assertNotNull(password, userEntity.getPassword());
+        assertNotNull(userEntity.getPassword());
     }
 
     @Test
@@ -64,5 +64,6 @@ public class CreateUserUseCaseTest {
         });
 
         assertEquals("User already exists", ex.getReason());
+        verify(userRepository, never()).save(any());
     }
 }
