@@ -1,7 +1,7 @@
 package dev.vinion.jtools.modules.userModule.usecases;
 
-import dev.vinion.jtools.database.Entities.UserEntity.UserEntity;
-import dev.vinion.jtools.database.Repositories.UserRepository.UserRepository;
+import dev.vinion.jtools.database.entities.UserEntity.UserEntity;
+import dev.vinion.jtools.database.repositories.UserRepository.UserRepository;
 import dev.vinion.jtools.modules.userModule.dto.CreateUserUseCaseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ public class CreateUserUseCase {
     public void execute(CreateUserUseCaseDto data) {
         Optional<UserEntity> findUser = this.userRepository.findByEmail(data.getEmail());
 
-        if (findUser.isPresent()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User already exist");
+        if (findUser.isPresent()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User already exists");
 
         UserEntity user = UserEntity.builder().email(data.getEmail()).password(data.getPassword()).build();
 
