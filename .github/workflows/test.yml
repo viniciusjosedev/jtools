@@ -1,0 +1,36 @@
+name: jtools test
+
+on:
+  pull_request:
+    paths:
+      - '**.java'
+      - '**.yml'
+      - 'Dockerfile'
+    branches: [ "main" ]
+
+  push:
+    paths:
+      - '**.java'
+      - '**.yml'
+      - 'Dockerfile'
+    branches: [ "main" ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: [17.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Java ${{ java-version }}
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ java-version }}
+
+      - name: Build and test
+        run: ./mvnw clean verify
+

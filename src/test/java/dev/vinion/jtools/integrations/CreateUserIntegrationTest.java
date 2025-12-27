@@ -51,10 +51,6 @@ public class CreateUserIntegrationTest extends IntegrationTestBase {
 
         this.userRepository.save(UserEntity.builder().email(EMAIL).password(PASSWORD).build());
 
-        Map<String, Object> response = new HashMap<>();
-        response.put("statusCode", HttpStatus.BAD_REQUEST.value());
-        response.put("success", false);
-        response.put("data", Map.of("error", "User already exists"));
 
         webTestClient
                 .post()
