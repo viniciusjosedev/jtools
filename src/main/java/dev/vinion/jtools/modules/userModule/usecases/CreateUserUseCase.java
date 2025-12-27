@@ -18,15 +18,21 @@ public class CreateUserUseCase {
     private final BCryptService bCryptService;
 
     public void execute(CreateUserUseCaseDto data) {
+        System.out.println("antes");
+
         Optional<UserEntity> findUser = this.userRepository.findByEmail(data.getEmail());
 
         if (findUser.isPresent()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User already exists");
+
+        System.out.println("depois");
 
         UserEntity user = UserEntity
                 .builder()
                 .email(data.getEmail())
                 .password(this.bCryptService.encode(data.getPassword()))
                 .build();
+
+        System.out.printf("password %s", user.getPassword());
 
         this.userRepository.save(user);
     }
