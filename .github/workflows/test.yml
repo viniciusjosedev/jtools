@@ -6,6 +6,7 @@ on:
       - '**.java'
       - '**.yml'
       - 'Dockerfile'
+      - 'pom.xml'
     branches: [ "main" ]
 
   push:
@@ -13,6 +14,7 @@ on:
       - '**.java'
       - '**.yml'
       - 'Dockerfile'
+      - 'pom.xml'
     branches: [ "main" ]
 
 jobs:
