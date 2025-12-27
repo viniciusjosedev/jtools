@@ -28,10 +28,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Java ${{ java-version }}
+      - name: Setup Java ${{ matrix.java-version }}
         uses: actions/setup-java@v3
         with:
-          java-version: ${{ java-version }}
+          java-version: ${{ matrix.java-version }}
 
       - name: Build and test
         run: ./mvnw clean verify
