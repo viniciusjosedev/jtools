@@ -6,12 +6,12 @@ import dev.vinion.jtools.modules.userModule.dto.CreateUserUseCaseDto;
 import dev.vinion.jtools.services.bcrypt.BCryptService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class CreateUserUseCase {
     private final UserRepository userRepository;

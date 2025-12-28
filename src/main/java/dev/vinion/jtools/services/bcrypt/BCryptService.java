@@ -3,8 +3,9 @@ package dev.vinion.jtools.services.bcrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class BCryptService {
     private final PasswordEncoder encoder;
 
