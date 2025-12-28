@@ -16,6 +16,6 @@ public class Configuration implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(this.authMiddleware).addPathPatterns("/**").excludePathPatterns("/user/create");
+        registry.addInterceptor(this.authMiddleware).addPathPatterns("/**").excludePathPatterns("/user/create").excludePathPatterns("/auth/**");
     }
 }

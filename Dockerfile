@@ -3,11 +3,11 @@ FROM eclipse-temurin:17-jdk AS development
 
 WORKDIR /app
 
-COPY . .
-
+COPY mvnw .
+COPY .mvn .mvn
 RUN chmod +x mvnw
 
-CMD ["./mvnw", "spring-boot:run"]
+CMD ["./docker-entrypoint.sh"]
 
 # BUILD
 FROM maven:3.9-eclipse-temurin-17 AS build

@@ -24,8 +24,6 @@ services:
     container_name: jtools-api
     networks:
       - jtools-networking
-    environment:
-        - MAVEN_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:${PORT_DEBUG}
     env_file:
       - .env
     volumes:
@@ -35,6 +33,7 @@ services:
     ports:
       - "${PORT}:${PORT}"
       - "${PORT_DEBUG}:${PORT_DEBUG}"
+      - 35729:35729
 
 volumes:
   jtools_data:

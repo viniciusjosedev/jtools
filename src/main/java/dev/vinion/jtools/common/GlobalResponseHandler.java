@@ -1,11 +1,13 @@
 package dev.vinion.jtools.common;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -79,12 +81,14 @@ public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
         body.put("success", false);
         body.put("data", data);
 
-        return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(body, ex.getStatusCode());
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleGeneralException(Exception ex) {
         Map<String, Object> body = new HashMap<>();
+
+        System.out.printf("error", ex.getMessage());
 
         body.put("statusCode", 500);
         body.put("success", false);

@@ -6,6 +6,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import dev.vinion.jtools.database.entities.UserEntity.UserEntity;
 import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -19,13 +20,11 @@ public class JwtService {
         this.algorithm = Algorithm.HMAC256("test");
     }
 
-    public String sign(Map<String, Object> data) {
+    public String sign(UserEntity data) {
         JWTCreator.Builder sign = JWT.create();
-        sign.withExpiresAt(LocalDateTime.now().plusYears(1).atZone(ZoneId.systemDefault()).toInstant());
-
-        data.keySet().forEach((key) -> {
-            sign.withClaim(key, (String) data.get(key));
-        });
+        sign.withExpiresAt(LocalDateTime.now().plusYears(1).atZone(ZoneId.systemDefault()).toInstant())
+                .withClaim("id", data.getId())
+                .withClaim("email", data.getEmail());
 
         return sign.sign(this.algorithm);
     }
