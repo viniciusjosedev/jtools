@@ -2,7 +2,7 @@ package dev.vinion.jtools.middleware;
 
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
-import dev.vinion.jtools.services.Jwt.JwtService;
+import dev.vinion.jtools.services.jwt.JwtService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;

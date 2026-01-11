@@ -3,7 +3,7 @@ package dev.vinion.jtools.modules.authModule.usecases;
 import dev.vinion.jtools.database.entities.UserEntity.UserEntity;
 import dev.vinion.jtools.database.repositories.UserRepository.UserRepository;
 import dev.vinion.jtools.modules.authModule.dto.AuthUseCaseDto;
-import dev.vinion.jtools.services.Jwt.JwtService;
+import dev.vinion.jtools.services.jwt.JwtService;
 import dev.vinion.jtools.services.bcrypt.BCryptService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

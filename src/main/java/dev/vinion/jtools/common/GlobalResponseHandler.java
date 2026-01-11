@@ -88,7 +88,7 @@ public class GlobalResponseHandler implements ResponseBodyAdvice<Object> {
     public ResponseEntity<Map<String, Object>> handleGeneralException(Exception ex) {
         Map<String, Object> body = new HashMap<>();
 
-        System.out.printf("error", ex.getMessage());
+        System.out.printf("error ", ex.getMessage());
 
         body.put("statusCode", 500);
         body.put("success", false);

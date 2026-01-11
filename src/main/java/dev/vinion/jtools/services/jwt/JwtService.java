@@ -1,4 +1,4 @@
-package dev.vinion.jtools.services.Jwt;
+package dev.vinion.jtools.services.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;
