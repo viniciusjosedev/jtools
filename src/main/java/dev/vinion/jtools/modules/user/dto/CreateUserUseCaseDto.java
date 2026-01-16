@@ -1,4 +1,4 @@
-package dev.vinion.jtools.modules.userModule.dto;
+package dev.vinion.jtools.modules.user.dto;
 
 import lombok.*;
 

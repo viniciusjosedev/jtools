@@ -2,8 +2,8 @@ package dev.vinion.jtools.unit;
 
 import dev.vinion.jtools.database.entities.UserEntity.UserEntity;
 import dev.vinion.jtools.database.repositories.UserRepository.UserRepository;
-import dev.vinion.jtools.modules.userModule.dto.CreateUserUseCaseDto;
-import dev.vinion.jtools.modules.userModule.usecases.CreateUserUseCase;
+import dev.vinion.jtools.modules.user.dto.CreateUserUseCaseDto;
+import dev.vinion.jtools.modules.user.usecases.CreateUserUseCase;
 import dev.vinion.jtools.services.bcrypt.BCryptService;
 import org.junit.jupiter.api.Test; // JUnit 5
 import org.junit.jupiter.api.extension.ExtendWith;

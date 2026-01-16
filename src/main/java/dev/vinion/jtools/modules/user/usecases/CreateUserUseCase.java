@@ -1,8 +1,8 @@
-package dev.vinion.jtools.modules.userModule.usecases;
+package dev.vinion.jtools.modules.user.usecases;
 
 import dev.vinion.jtools.database.entities.UserEntity.UserEntity;
 import dev.vinion.jtools.database.repositories.UserRepository.UserRepository;
-import dev.vinion.jtools.modules.userModule.dto.CreateUserUseCaseDto;
+import dev.vinion.jtools.modules.user.dto.CreateUserUseCaseDto;
 import dev.vinion.jtools.services.bcrypt.BCryptService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

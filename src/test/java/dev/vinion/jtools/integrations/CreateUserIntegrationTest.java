@@ -2,17 +2,14 @@ package dev.vinion.jtools.integrations;
 
 import dev.vinion.jtools.database.entities.UserEntity.UserEntity;
 import dev.vinion.jtools.database.repositories.UserRepository.UserRepository;
-import dev.vinion.jtools.modules.userModule.dto.CreateUserControllerDto;
+import dev.vinion.jtools.modules.user.dto.CreateUserControllerDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 public class CreateUserIntegrationTest extends IntegrationTestBase {

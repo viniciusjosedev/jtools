@@ -1,4 +1,4 @@
-package dev.vinion.jtools.modules.authModule.dto;
+package dev.vinion.jtools.modules.auth.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
